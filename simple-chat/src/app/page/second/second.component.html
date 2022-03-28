@@ -1,0 +1,15 @@
+<div class="chat">
+  <div class="content">
+    <nb-chat title="Simple Chat" size="large">
+      <nb-chat-message *ngFor="let msg of messages"
+          [message]="msg.text"
+          [sender]="msg.user.name"
+          [date]="msg.date"
+          [reply]="msg.reply"
+          [avatar]="msg.user.avatar">
+      </nb-chat-message>
+      <nb-chat-form (send)="sendMessage($event)" >
+      </nb-chat-form>
+    </nb-chat>
+  </div>
+</div>
